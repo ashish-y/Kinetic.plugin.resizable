@@ -1,0 +1,48 @@
+<html>
+	<head>	
+	</head>
+	<body onmousedown="return false;">
+    <!-- Make a container -->
+		<div id="container" style="border:1px solid";>
+		</div>	
+    <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v4.3.1.min.js"></script>
+    <script src="kinetic.plugin.resize.js"></script>
+		<script>
+    var yodaImg;
+    //define the width height of the Image
+    var width=93;
+    var height=104;
+
+    var KineticPlugins;
+    //Make a stage 
+    var stage = new Kinetic.Stage({
+          container: 'container',
+          width: 578,
+          height: 500
+        });
+    var layer = new Kinetic.Layer();
+    var imageObj = new Image();
+    // on image load
+   imageObj.onload = function() {
+     yodaImg = new Kinetic.Image({
+          x: 0,
+          y: 0,
+          image: imageObj,
+          width: width,
+          height: height,
+          name: "image"
+        });
+
+     //Plugin to define resize the image - 
+      KineticPlugins = new Kinetic.Plugins.Resizable({
+      image : yodaImg,  // Image Name
+      layer : layer,    // Layer Name
+      stage : stage     //Stage Name
+    });
+      //Initialize the Plugin (pass width and height of the image)
+    KineticPlugins.reSize(width, height );
+  };
+    imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg';
+		</script>
+	</body>
+</html>
