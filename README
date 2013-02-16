@@ -8,6 +8,45 @@ Installation:
 Download kinetic.plugin.resize.js 
 Include kinetic.plugin.resize.js after kinetic.js in HTML
 
+Usage
+
+	var yodaImg; // name of the image
+    //define the width height of the Image
+    var width=93;
+    var height=104;
+
+    var KineticPlugins; /
+    //Make a stage 
+    var stage = new Kinetic.Stage({
+          container: 'container',
+          width: 578,
+          height: 500
+        });
+    var layer = new Kinetic.Layer();
+    var imageObj = new Image();
+    // on image load
+   imageObj.onload = function() {
+     yodaImg = new Kinetic.Image({
+          x: 0,
+          y: 0,
+          image: imageObj,
+          width: width,   //pass the width 
+          height: height,  //pass the height
+          name: "image"
+        });
+
+     //Plugin resize the image - 
+      KineticPlugins = new Kinetic.Plugins.Resizable({
+      image : yodaImg,  // Image Name
+      layer : layer,    // Layer Name
+      stage : stage     //Stage Name
+    });
+      //Initialize the Plugin (pass width and height of the image)
+    KineticPlugins.reSize(width, height );
+  };
+    imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg'; // Image object
 
 
-
+For Multiple Image.
+	define the image again and also pass valid options
+	and initialize the plugin again .
