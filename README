@@ -8,7 +8,7 @@ Installation:
 
 Usage
 
-	var yodaImg; // name of the image
+<code>	var yodaImg; // name of the image
     	//define the width height of the Image
    	var width=93;
    	var height=104;
@@ -44,7 +44,7 @@ Usage
     		KineticPlugins.reSize(width, height );
   	};
     	imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg'; // Image object
-
+</code>
 
 For Multiple Image.
 	define the image again and also pass valid options
