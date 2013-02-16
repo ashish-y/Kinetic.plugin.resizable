@@ -1,0 +1,13 @@
+Project :
+KineticJs Resize plugin
+
+Description:
+A small Plugin I made for KineticJS to make resizing easy
+
+Installation:
+Download kinetic.plugin.resize.js 
+Include kinetic.plugin.resize.js after kinetic.js in HTML
+
+
+
+
