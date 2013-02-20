@@ -1,0 +1,117 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Kinetic.plugin.resizable</title>
+  <meta name="description" content="An Image resize Plugin for KineticJS Canvas framework">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Kinetic.plugin.resizable</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">An Image resize Plugin for KineticJS Canvas framework</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/ashish-y/Kinetic.plugin.resizable/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/ashish-y/Kinetic.plugin.resizable/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/ashish-y/Kinetic.plugin.resizable" class="code">View Kinetic.plugin.resizable on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h3>Welcome.</h3>
+
+<p>A small Plugin I made for KineticJS to make resizing easy</p>
+
+<h3>Installation:</h3>
+
+<p>Download kinetic.plugin.resize.js </p>
+
+<p>Include kinetic.plugin.resize.js after kinetic.js in HTML</p>
+
+<h3>Usage:</h3>
+
+<pre><code>var yodaImg; // name of the image
+//define the width height of the Image
+var width=93;
+var height=104;
+
+var KineticPlugins; /
+//Make a stage 
+var stage = new Kinetic.Stage({
+      container: 'container',
+      width: 578,
+      height: 500
+    });
+var layer = new Kinetic.Layer();
+var imageObj = new Image();
+// on image load
+ imageObj.onload = function() {
+ yodaImg = new Kinetic.Image({
+      x: 0,
+      y: 0,
+      image: imageObj,
+      width: width,   //pass the width 
+      height: height,  //pass the height
+      name: "image"
+    });
+
+ //Plugin resize the image - 
+  KineticPlugins = new Kinetic.Plugins.Resizable({
+  image : yodaImg,  // Image Name
+  layer : layer,    // Layer Name
+  stage : stage     //Stage Name
+   });
+  //Initialize the Plugin (pass width and height of the image)
+   KineticPlugins.reSize(width, height );
+ };
+   imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/yoda.jpg'; // Image object
+</code></pre>
+
+<p>For Multiple Image.
+    define the image again and also pass valid options
+    and initialize the plugin again .</p>
+
+<h3>Support or Contact</h3>
+
+<p>Having trouble?contact <a href="mailto:ashish.god5@gmail.com">ashish.god5@gmail.com</a>!</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/ashish-y" class="avatar"><img src="https://secure.gravatar.com/avatar/28094f99229cd92fc318f5e875a925a9?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/ashish-y">ashish-y</a> maintains <a href="https://github.com/ashish-y/Kinetic.plugin.resizable">Kinetic.plugin.resizable</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/ashish-y/Kinetic.plugin.resizable/tarball/master" class="tar">tar</a><a href="https://github.com/ashish-y/Kinetic.plugin.resizable/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
