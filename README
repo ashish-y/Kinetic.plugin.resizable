@@ -48,22 +48,21 @@ Usage
 
 To maintain the aspect ratio of the image
   -- replace 
-        	var width = topRight.getX() - topLeft.getX();
-       	  var height = bottomLeft.getY() - topLeft.getY();
+        var width = topRight.getX() - topLeft.getX();
+       	var height = bottomLeft.getY() - topLeft.getY();
         	if(width && height) {
           	image.setSize(width, height);
-        	}
-        ...by
-        	var height = bottomLeft.attrs.y - topLeft.attrs.y;
-					var width = image.getWidth()*height/image.getHeight();
-					topRight.attrs.x = topLeft.attrs.x + width;
-					topRight.attrs.y = topLeft.attrs.y;
-					bottomRight.attrs.x = topLeft.attrs.x + width;
-					bottomRight.attrs.y = topLeft.attrs.y + height;
-	
-					if(width && height) {
-						image.setSize(width, height);
-					}
+        }
+  ...by
+        var height = bottomLeft.attrs.y - topLeft.attrs.y;
+	var width = image.getWidth()*height/image.getHeight();
+	topRight.attrs.x = topLeft.attrs.x + width;
+	topRight.attrs.y = topLeft.attrs.y;
+	bottomRight.attrs.x = topLeft.attrs.x + width;
+	bottomRight.attrs.y = topLeft.attrs.y + height;
+	if(width && height) {
+		image.setSize(width, height);
+	}
 	--
 	
 For Multiple Image.
