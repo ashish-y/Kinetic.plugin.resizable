@@ -63,6 +63,26 @@ Kinetic.Plugins.Resizable = function(options) {
         if(width && height) {
           image.setSize(width, height);
         }
+        
+        //to maintain the aspect ration 
+        /* replace 
+        	var width = topRight.getX() - topLeft.getX();
+       	  var height = bottomLeft.getY() - topLeft.getY();
+        	if(width && height) {
+          	image.setSize(width, height);
+        	}
+        ...by
+        	var height = bottomLeft.attrs.y - topLeft.attrs.y;
+					var width = image.getWidth()*height/image.getHeight();
+					topRight.attrs.x = topLeft.attrs.x + width;
+					topRight.attrs.y = topLeft.attrs.y;
+					bottomRight.attrs.x = topLeft.attrs.x + width;
+					bottomRight.attrs.y = topLeft.attrs.y + height;
+	
+					if(width && height) {
+						image.setSize(width, height);
+					}
+				*/ 
       }
 function addAnchor(group, x, y, name) {
         var stage = group.getStage();
